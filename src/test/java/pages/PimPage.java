@@ -29,6 +29,7 @@ public class PimPage {
     }
 
     public void userClickAddEmployeeButton(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3)); //add delay
         driver.findElement(add_employee_link).click();
     }
 
