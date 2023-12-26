@@ -10,7 +10,7 @@ public class PimPage {
 
     By pim_link = By.xpath("//a[@href = '/web/index.php/pim/viewPimModule']");
 
-    By add_employee_link = By.xpath("//a[text() = 'Add Employee']");
+    By add_employee_link = By.xpath("//*[text() = 'Add Employee']");
 
     By input_firstname = By.name("firstName");
 
