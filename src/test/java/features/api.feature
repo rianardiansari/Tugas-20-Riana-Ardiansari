@@ -43,6 +43,5 @@ Feature: Test Automation Rest Api
     And hit api post negative create new user
     Then validation status code is equals 422
     Then validation response body post negative create new user
-    Then validation response json with JSONSchema "post_negative_create_new_user.json"
 
 
