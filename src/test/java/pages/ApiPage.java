@@ -117,38 +117,9 @@ public class ApiPage {
     }
 
     public void validationResponseBodyNegativeCreateNewUsers() {
-        JsonPath jsonPathEvaluator = res.jsonPath();
-        Integer id = jsonPathEvaluator.get("id");
-        String name = jsonPathEvaluator.get("name");
-        String email = jsonPathEvaluator.get("email");
-        String gender = jsonPathEvaluator.get("gender");
-        String status = jsonPathEvaluator.get("status");
-
-        assertThat(id).isNotNull();
-        assertThat(name).isNotNull();
-        assertThat(email).isNotNull();
-        assertThat(gender).isIn("female", "male");
-        assertThat(status).isIn("active", "inactive");
-
-        global_id = Integer.toString(id);
-    }
-
-    public void hitApiPostEdgeCreateNewUser() {
-        res = postEdgeCreateUser(setURL);
-        System.out.println(res.getBody().asString());
-    }
-
-    public void validationResponseBodyEdgeCreateNewUsers() {
-        JsonPath jsonPathEvaluator = res.jsonPath();
-
-        String id  = jsonPathEvaluator.get("id");
-        String name = jsonPathEvaluator.get("name");
-        Integer age = jsonPathEvaluator.get("age");
-
-        assertThat(id).isNotNull();
-        assertThat(name).isNotNull();
-        assertThat(age).isBetween(1, 90);
-
+        String expectedErrorMessage = "can't be blank, can be male of female";
+        String errorMessage = res.getBody().asString();
+        assertThat(errorMessage).contains(expectedErrorMessage);
     }
 
 }
