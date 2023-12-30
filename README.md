@@ -29,3 +29,8 @@ Execute Web UI Testing
 Execute API Testing
 - name: Execute API Test      
   run: ./gradlew apiTest
+
+
+Screenshoot Run Test
+
+  <img width="1440" alt="Screenshot 2023-12-30 at 11 04 43" src="https://github.com/rianardiansari/Tugas-20-Riana-Ardiansari/assets/149749846/b7d0ae2c-26ee-44a5-9cb3-58701406c3da">
